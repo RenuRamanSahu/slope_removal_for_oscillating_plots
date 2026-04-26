@@ -1,0 +1,1 @@
+# slope_removal_for_oscillating_plots
