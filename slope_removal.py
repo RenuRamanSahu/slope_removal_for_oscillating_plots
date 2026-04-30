@@ -16,7 +16,7 @@ print(len_R)
 window_size = int(0.025*len_R)
 for i in range(len_R-window_size):
     R_avg.append(0.5*(max(R[i:i+window_size])+min(R[i:i+window_size])))
-    R_normalised.append(R[i]/R_avg[i])  
+    R_normalised.append(R[i]/R_avg[i]-1)  
     t_normalised.append(time[i])
 
 fig = plt.figure(figsize = (4,3))
@@ -37,7 +37,7 @@ ax2 = fig2.add_subplot(111)
 ax2.plot(time, R)
 ax2.plot(t_normalised, R_avg)
 ax2.set_xlabel("Time (s)")
-ax2.set_ylabel("R (ohm))")
+ax2.set_ylabel(r"$\Delta R / R$")
 
 # ax.plot(time[:window_size], R[:window_size])
 plt.tight_layout()
